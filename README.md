@@ -45,18 +45,6 @@ Docker и docker compose установлены:
 ![screen](screenshots/4.png)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 ## Задача 2
 1. Запустите ваш образ custom-nginx:1.0.0 командой docker run в соответвии с требованиями:
 - имя контейнера "ФИО-custom-nginx-t2"
@@ -69,6 +57,30 @@ Docker и docker compose установлены:
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
 
 ## Решение
+
+Запускаем конейнер в соответствии с требованиями:
+
+```
+docker run --name DedyakhinIV-custom-mginx-t2 -d -p 127.0.0.1:8080:80 igorbob/custom-nginx:1.0.0
+```
+
+![screen](screenshots/5.png)
+
+Не удаляя переименовываем:
+
+```
+docker rename DedyakhinIV-custom-mginx-t2 custom-nginx-t2
+```
+
+![screen](screenshots/6.png)
+
+Результат выполнения команд:
+
+![screen](screenshots/7.png)
+
+
+
+
 
 
 
