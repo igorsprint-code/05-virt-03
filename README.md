@@ -26,6 +26,31 @@ Hey, Netology
 
 ## Решение
 
+Docker и docker compose установлены:
+
+![screen](screenshots/1.png)
+
+Создан репозиторий:
+
+![screen](screenshots/2.png)
+
+Скачан образ nginx:1.29.0
+
+![screen](screenshots/3.png)
+
+Создан [Dockerfile](Dockerfile) с заменой дефолтной страницы. Собранный образ отправлен в [репозиторий](https://hub.docker.com/repository/docker/igorbob/custom-nginx/general)
+
+
+
+
+
+
+
+
+
+
+
+
 ## Задача 2
 1. Запустите ваш образ custom-nginx:1.0.0 командой docker run в соответвии с требованиями:
 - имя контейнера "ФИО-custom-nginx-t2"
@@ -38,6 +63,8 @@ Hey, Netology
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
 
 ## Решение
+
+
 
 
 ## Задача 3
