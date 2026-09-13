@@ -40,6 +40,12 @@ Docker и docker compose установлены:
 
 Создан [Dockerfile](Dockerfile) с заменой дефолтной страницы. Собранный образ отправлен в [репозиторий](https://hub.docker.com/repository/docker/igorbob/custom-nginx/general)
 
+Демонстрация работы:
+
+![screen](screenshots/4.png)
+
+
+
 
 
 
