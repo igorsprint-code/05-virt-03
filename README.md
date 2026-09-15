@@ -161,17 +161,6 @@ apt install nano/oldstable
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 ## Задача 4
 
 
@@ -183,6 +172,44 @@ apt install nano/oldstable
 
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
+
+
+## Решение
+
+Запускаем контейнер ***centos*** подключив папку  текущий рабочий каталог:
+
+```
+docker run -d --name my-centos -v "$(pwd):/data" centos:7 sleep infinity
+```
+
+Контейнер запущен, в каталоге /data видим файлы из рабочего каталога:
+
+
+![screen](screenshots/18.png)
+
+Запускаем контейнер ***debian*** подключив папку  текущий рабочий каталог:
+
+```
+docker run -d --name my-debian -v "$(pwd):/data" debian:trixie-backports sleep infinity
+```
+
+Контейнер запущен, в каталоге /data видим файлы из рабочего каталога:
+
+![screen](screenshots/19.png)
+
+Создаем в контейнере centos файл test_centos.txt
+
+![screen](screenshots/20.png)
+
+Создаем файл test_host.txt на хостовой машине:
+
+![screen](screenshots/21.png)
+
+Подключаемся в машине debian, видим файлы test_centos.txt и test_host.txt
+
+
+![screen](screenshots/22.png)
+
 
 
 ## Задача 5
