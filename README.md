@@ -259,6 +259,35 @@ services:
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод, файл compose.yaml , скриншот portainer c задеплоенным компоузом.
 
+
+## Решение
+
+Файлы созданы:
+
+![screen](screenshots/23.png)
+
+Выполняем команду "docker compose up -d"
+
+![screen](screenshots/24.png)
+
+Был запущен файл "compose.yaml", объяснение находим в мануале -  compose.yaml - предпочтительный вариант, если оба файла существуют, Compose отдает предпочтение каноническому compose.yaml.
+
+```
+The default path for a Compose file is compose.yaml (preferred) or compose.yml that is placed in the working directory. Compose also supports docker-compose.yaml and docker-compose.yml for backwards compatibility of earlier versions. If both files exist, Compose prefers the canonical compose.yaml.
+```
+Добавляем в файл compose.yaml строки:
+
+```
+include:
+  - docker-compose.yaml
+```
+
+Снова выполняем "docker compose up -d", оба файла были запущены, созданы оба контейнера:
+
+![screen](screenshots/25.png)
+
+
+
 ---
 
 ### Правила приема
