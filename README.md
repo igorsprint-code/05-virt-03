@@ -275,10 +275,10 @@ services:
 ```
 The default path for a Compose file is compose.yaml (preferred) or compose.yml that is placed in the working directory. Compose also supports docker-compose.yaml and docker-compose.yml for backwards compatibility of earlier versions. If both files exist, Compose prefers the canonical compose.yaml.
 ```
-Добавляем в файл compose.yaml строки:
+Добавляем в файл [compose.yaml](compose.yaml) строки:
 
 ```
-include:
+include:s
   - docker-compose.yaml
 ```
 
@@ -286,7 +286,35 @@ include:
 
 ![screen](screenshots/25.png)
 
+Заливаем образ custom-nginx как custom-nginx:latest в локальное registry:
 
+![screen](screenshots/26.png)
+
+Страница "https://127.0.0.1:9000":
+
+![screen](screenshots/27.png)
+
+Страница "https://127.0.0.1:9000", на вкладке "stacks" в "web editor" задеплоим следующий компоуз::
+
+![screen](screenshots/28.png)
+
+На странице "http://127.0.0.1:9000/#!/2/docker/containers", выбираем контейнер с nginx. Поля "AppArmorProfile" до "Driver":
+
+![screen](screenshots/29.png)
+
+
+Удаляем compose.yaml, после выполнения "docker compose up -d" получаем warning. Compose обнраужил контейнер portainer, который относился к этому compose проекту, теперь это orphan контейнер (сирота). Compose предлагает запустить команду с флагом --remove-orphans для того чтобы удалить контейнеры, которых больше нет в compose файлах.
+
+![screen](screenshots/30.png)
+
+
+Погасим compose-проект одной командой:
+
+```
+docker compose down --remove-orphans
+```
+
+![screen](screenshots/31.png)
 
 ---
 
